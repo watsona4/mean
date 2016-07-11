@@ -1,6 +1,9 @@
 def mean(num_list):
     try:
-        return sum(num_list)/len(num_list)
+        val = sum(num_list)/len(num_list)
+        if isinstance(val, complex):
+            return NotImplemented
+        return val
     except ZeroDivisionError as detail :
         msg = "The algebraic mean of an empty list is undefined."
         msg += "Please provide a list of numbers."
